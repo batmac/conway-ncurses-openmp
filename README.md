@@ -4,8 +4,8 @@ multithreading Conway's Game of Life with openmp, rendering is done with libncur
 [Conway's Game of Life](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life)
 
 ## build
-have at least ncurses dev files, optionnaly SDl and/or libcaca 's ones.
-`make` 
+have at least ncurses dev files, optionnaly SDL and/or libcaca 's ones.
+```make` ``
 
 ## options
 ```
@@ -23,8 +23,6 @@ Usage:
 ## openmp
 ```
 make omp 
-#or
-make -f Makefile-omp 
 
 OMP_NUM_THREADS=5 timeout -s INT 10 ./nlife-omp-ncurses -l EXAMPLES/s1.l -L1280 -R1280 -b
 ```
@@ -33,7 +31,6 @@ OMP_NUM_THREADS=5 timeout -s INT 10 ./nlife-omp-ncurses -l EXAMPLES/s1.l -L1280 
 ## bench 
 use -b
 
-## cache ??
 
 ## notes
 comments are in _french_
