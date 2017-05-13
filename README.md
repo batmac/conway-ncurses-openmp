@@ -5,7 +5,9 @@ multithreading Conway's Game of Life with openmp, rendering is done with libncur
 
 ## build
 have at least ncurses dev files, optionnaly SDL and/or libcaca 's ones.
-```make```
+```
+make
+```
 
 ## options
 ```
