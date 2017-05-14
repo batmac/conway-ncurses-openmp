@@ -107,23 +107,29 @@ int main(int argc, char * argv[]) {
 		for(i=0;i<lines;++i)
 			for(j=0;j<rows;++j) {
 				if (world1[i*rows+j] == 1) {
+					unsigned int k = (i-1+lines)%lines *rows;
+					unsigned int l = (i  +lines)%lines *rows;
+					unsigned int m = (i+1+lines)%lines *rows;
+					unsigned int x = (j-1+rows)%rows;
+					unsigned int y = (j  +rows)%rows;
+					unsigned int z = (j+1+rows)%rows;
 					/* le monde est un tore, attention aux modulos négatifs */
 #pragma omp atomic
-					world2[(i-1+lines)%lines *rows + (j-1+rows)%rows]++;
+					world2[k + x]++;
 #pragma omp atomic
-					world2[(i-1+lines)%lines *rows + (j  +rows)%rows]++;
+					world2[k + y]++;
 #pragma omp atomic
-					world2[(i-1+lines)%lines *rows + (j+1+rows)%rows]++;
+					world2[k + z]++;
 #pragma omp atomic
-					world2[(i  +lines)%lines *rows + (j-1+rows)%rows]++;
+					world2[l + x]++;
 #pragma omp atomic
-					world2[(i  +lines)%lines *rows + (j+1+rows)%rows]++;
+					world2[l + z]++;
 #pragma omp atomic
-					world2[(i+1+lines)%lines *rows + (j-1+rows)%rows]++;
+					world2[m + x]++;
 #pragma omp atomic
-					world2[(i+1+lines)%lines *rows + (j  +rows)%rows]++;
+					world2[m + y]++;
 #pragma omp atomic
-					world2[(i+1+lines)%lines *rows + (j+1+rows)%rows]++;
+					world2[m + z]++;
 				}
 			}
 		/* actualisation du tableau suivant le nbre de voisins */
