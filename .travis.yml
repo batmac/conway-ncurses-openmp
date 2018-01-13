@@ -16,11 +16,18 @@ language: c
 compiler:
   - clang
   - gcc
+env:
+  - TARGET=singlethread
+  - TARGET=omp
 sudo: false
 script:
   - set -e
   - printenv
-  - make
-  - make singlethread
-  - make omp
+  - make $TARGET
   - ls
+matrix:
+  fast_finish: true
+  allow_failures:
+    - os: osx
+      compiler: clang
+      env: TARGET=omp
