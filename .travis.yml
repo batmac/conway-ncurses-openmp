@@ -28,6 +28,7 @@ script:
   - set -e
   - printenv
   - make $TARGET
+  - make test-omp
   - ls
 matrix:
   fast_finish: true
