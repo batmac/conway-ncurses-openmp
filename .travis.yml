@@ -8,7 +8,7 @@ addons:
       - cppcheck
 before_install:
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
-    HOMEBREW_NO_AUTO_UPDATE=1 brew install cppcheck ncurses
+    HOMEBREW_NO_AUTO_UPDATE=1 brew install cppcheck ncurses ;
     fi
 language: c
 compiler:
