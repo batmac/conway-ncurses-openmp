@@ -27,6 +27,7 @@ sudo: false
 script:
   - set -e
   - printenv
+  - cat /proc/cpuinfo
   - make $TARGET
   - ls
 matrix:
