@@ -12,6 +12,10 @@ before_install:
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
     HOMEBREW_NO_AUTO_UPDATE=1 brew install cppcheck ncurses libcaca sdl ;
     fi
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]] && [ "$CC" == "gcc" ]; then
+    HOMEBREW_NO_AUTO_UPDATE=1 brew install gcc
+    CC="/usr/local/Cellar/gcc/*/bin/gcc-*" ;
+    fi
 language: c
 compiler:
   - clang
