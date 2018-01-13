@@ -6,9 +6,11 @@ addons:
   apt:
     packages:
       - cppcheck
+      - libcaca-dev
+      - libsdl1.2-dev
 before_install:
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
-    HOMEBREW_NO_AUTO_UPDATE=1 brew install cppcheck ncurses ;
+    HOMEBREW_NO_AUTO_UPDATE=1 brew install cppcheck ncurses sdl ;
     fi
 language: c
 compiler:
