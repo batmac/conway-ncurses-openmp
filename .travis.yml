@@ -14,7 +14,7 @@ before_install:
     fi
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]] && [[ "$CC" == "gcc" ]]; then
     HOMEBREW_NO_AUTO_UPDATE=1 brew install gcc ;
-    CC="/usr/local/Cellar/gcc/*/bin/gcc-*" ;
+    CC="/usr/local/Cellar/gcc/*/bin/gcc-?" ;
     fi
 language: c
 compiler:
