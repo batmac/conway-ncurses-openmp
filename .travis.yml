@@ -22,3 +22,5 @@ script:
   - printenv
   - make
   - make singlethread
+  - make omp
+  - ls
