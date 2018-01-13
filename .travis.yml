@@ -1,0 +1,22 @@
+---
+os:
+  - linux
+  - osx
+addons:
+  apt:
+    packages:
+      - cppcheck
+before_install:
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
+    HOMEBREW_NO_AUTO_UPDATE=1 brew install cppcheck ncurses
+    fi
+language: c
+compiler:
+  - clang
+  - gcc
+sudo: false
+script:
+  - set -e
+  - printenv
+  - make lint
+  - make
