@@ -32,7 +32,11 @@ nlife-omp-caca : nlife.c
 nlife-omp-sdl : nlife.c
 	-$(CC) $(CFLAGS) $(OMP) $< -o $@ `sdl-config --cflags` `sdl-config --libs` -DUSE_SDL
 
+test-omp: test/test-omp.c
+	$(CC) $(CFLAGS) $(OMP) $< -o $@
+	./$@
 
 clean :
 	-rm -f nlife-caca nlife-ncurses nlife-sdl
 	-rm -f nlife-omp-caca nlife-omp-ncurses nlife-omp-sdl
+	-rm -f test-omp
