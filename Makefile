@@ -8,7 +8,7 @@ allr : singlethread omp
 
 singlethread: nlife-ncurses nlife-caca nlife-sdl
 
-omp: test-omp nlife-omp-ncurses nlife-omp-caca nlife-omp-sdl
+omp: nlife-omp-ncurses nlife-omp-caca nlife-omp-sdl
 
 ncurses: nlife-ncurses nlife-omp-ncurses
 
